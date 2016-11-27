@@ -1,7 +1,23 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { changeText } from '../actions';
 
-export const NewInput = (() => {
-  return <input type="text" placeholder="writeme" />
-});
+let NewInput = ({ dispatch }) => {
+    let input;
 
-export default NewInput;
+    return <div>
+        <input
+            type="text"
+            placeholder="writeme"
+            ref={node => { input = node; } }
+            />
+        <button onClick={() => {
+            dispatch(changeText(input.value));
+            input.value = '';
+        } }>
+            save
+        </button>
+    </div>
+}
+
+export default connect()(NewInput);
