@@ -1,7 +1,7 @@
 import { createStore, combineReducers } from 'redux';
 
 const text = (state = '', action) => {
-    switch (action.typ) {
+    switch (action.type) {
         case 'CHANGE_TEXT':
             return action.text;
         default:
