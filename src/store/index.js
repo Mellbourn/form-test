@@ -13,4 +13,4 @@ const formTestApp = combineReducers({
     text
 })
 
-export default createStore(formTestApp);
+export default createStore(formTestApp, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
