@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { changeText } from '../actions';
 
-let NewInput = ({ dispatch }) => {
+let NewInput = ({ onClick }) => {
     let input;
 
     return <div>
@@ -12,7 +12,7 @@ let NewInput = ({ dispatch }) => {
             ref={node => { input = node; } }
             />
         <button onClick={() => {
-            dispatch(changeText(input.value));
+            onClick(input.value);
             input.value = '';
         } }>
             save
@@ -20,4 +20,14 @@ let NewInput = ({ dispatch }) => {
     </div>
 }
 
-export default connect()(NewInput);
+const mapDispatchProps = (
+    dispatch
+) => {
+    return {
+        onClick: (text) => {
+            dispatch(changeText(text))
+        }
+    }
+}
+
+export default connect(() => { return {}; }, mapDispatchProps)(NewInput);
