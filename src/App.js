@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 //import logo from './logo.svg';
 import store from './store';
 import NewInput from './components/NewInput.jsx';
+import Display from './components/Display.jsx';
 import './App.css';
 
 
@@ -18,6 +19,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <NewInput />
+        <Display />
       </div>
     );
   }
