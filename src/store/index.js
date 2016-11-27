@@ -1,0 +1,16 @@
+import { createStore, combineReducers } from 'redux';
+
+const text = (state = '', action) => {
+    switch (action.typ) {
+        case 'CHANGE_TEXT':
+            return action.text;
+        default:
+            return state;
+    }
+}
+
+const formTestApp = combineReducers({
+    text
+})
+
+export default createStore(formTestApp);
