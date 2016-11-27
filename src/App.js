@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 //import logo from './logo.svg';
 import store from './store';
+import NewInput from './components/NewInput.jsx';
 import './App.css';
 
-const NewInput = (() => {
-  return <input type="text" placeholder="writeme" />
-})
+
 
 class App extends Component {
   render() {
