@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Provider } from 'react-redux';
+//import logo from './logo.svg';
+import store from './store';
 import './App.css';
 
 const NewInput = (() => {
@@ -11,7 +13,6 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React, Klas</h2>
         </div>
         <p className="App-intro">
@@ -23,4 +24,8 @@ class App extends Component {
   }
 }
 
-export default App;
+export default (
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
