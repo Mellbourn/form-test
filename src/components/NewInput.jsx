@@ -30,4 +30,4 @@ const mapDispatchProps = (
     }
 }
 
-export default connect(() => { return {}; }, mapDispatchProps)(NewInput);
+export default connect(null, mapDispatchProps)(NewInput);
