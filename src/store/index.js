@@ -9,8 +9,19 @@ const text = (state = '', action) => {
     }
 }
 
+const listInitialState = []
+export const list = (state = listInitialState, action) => {
+    switch (action.type) {
+        case 'ADD_TO_LIST':
+            return state.concat(action.item);
+        default:
+            return state
+    }
+}
+
 const formTestApp = combineReducers({
-    text
+    text,
+    list
 })
 
 export default createStore(formTestApp, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
