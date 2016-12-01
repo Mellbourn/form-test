@@ -1,7 +1,7 @@
 import React from 'react'
 
 let key = 0;
-const List = ({ onClick, text, list }) => {
+export default ({ onClick, text, list }) => {
     return (
         <div>
             <button onClick={() => onClick(text)}>Add</button>
@@ -13,5 +13,3 @@ const List = ({ onClick, text, list }) => {
         </div>
     )
 }
-
-export default List
