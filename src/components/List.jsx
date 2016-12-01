@@ -1,9 +1,16 @@
 import React from 'react'
 
-const List = ({ onClick, text }) => {
-    return(
-        <button onClick={() => onClick(text)}>Add
-         </button>
+let key = 0;
+const List = ({ onClick, text, list }) => {
+    return (
+        <div>
+            <button onClick={() => onClick(text)}>Add</button>
+            <ul>
+                {list.map(item =>
+                    <li key={key++}>{item}</li>
+                )}
+            </ul>
+        </div>
     )
 }
 

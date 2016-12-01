@@ -4,7 +4,8 @@ import {addToList} from '../actions'
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        text: state.text
+        text: state.text,
+        list: state.list
     }
 }
 
