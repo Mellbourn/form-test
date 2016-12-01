@@ -1,11 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-let Dropdown = ({list}) => {
-    return(
-        <div>
-            {list}
-        </div>
+let key = 0;
+let Dropdown = ({ list }) => {
+    return (
+        <select>
+            {list.map(item => 
+                <option value={item} key={key++}>{item}</option>
+            )}
+        </select>
     )
 }
 
