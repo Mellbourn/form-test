@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 import NewInput from './components/NewInput.jsx';
 import Display from './components/Display.jsx';
+import ListContainer from './components/ListContainer';
 import './App.css';
 
 
@@ -20,6 +21,7 @@ class App extends Component {
         </p>
         <NewInput />
         <Display />
+        <ListContainer />
       </div>
     );
   }
