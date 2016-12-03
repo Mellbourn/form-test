@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Router, Route, hashHistory } from 'react-router';
+import { Router, Route, hashHistory, Link } from 'react-router';
 import { Provider } from 'react-redux';
 //import logo from './logo.svg';
 import store from './store';
@@ -15,6 +15,10 @@ class MainLayout extends Component {
       <div className="App">
         <div className="App-header">
           <h2>Welcome to React, Klas</h2>
+          <ul>
+            <li><Link to="/" activeClassName="active">Home</Link></li>
+            <li><Link to="/Other" activeClassName="active">Other</Link></li>
+          </ul>
         </div>
         {this.props.children}
       </div>
