@@ -9,15 +9,23 @@ import ListContainer from './components/ListContainer';
 import Dropdown from './components/Dropdown'
 import './App.css';
 
-
-
-class App extends Component {
+class MainLayout extends Component {
   render() {
     return (
       <div className="App">
         <div className="App-header">
           <h2>Welcome to React, Klas</h2>
         </div>
+        {this.props.children}
+      </div>
+    )
+  }
+}
+
+class App extends Component {
+  render() {
+    return (
+      <div>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
@@ -37,8 +45,10 @@ const Other = () => {
 export default (
   <Provider store={store}>
     <Router history={hashHistory}>
-      <Route path="/" component={App} />
-      <Route path="/Other" component={Other} />
+      <Route component={MainLayout}>
+        <Route path="/" component={App} />
+        <Route path="Other" component={Other} />
+      </Route>
     </Router>
   </Provider>
 );
