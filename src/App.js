@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Router, Route, hashHistory, Link } from 'react-router';
+import { Router, Route, browserHistory, Link } from 'react-router';
 import { Provider } from 'react-redux';
 //import logo from './logo.svg';
 import store from './store';
@@ -48,7 +48,7 @@ const Other = () => {
 
 export default (
   <Provider store={store}>
-    <Router history={hashHistory}>
+    <Router history={browserHistory}>
       <Route component={MainLayout}>
         <Route path="/" component={App} />
         <Route path="Other" component={Other} />
