@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Router, Route, hashHistory } from 'react-router';
 import { Provider } from 'react-redux';
 //import logo from './logo.svg';
 import store from './store';
@@ -29,8 +30,15 @@ class App extends Component {
   }
 }
 
+const Other = () => {
+  return <p>Other</p>
+}
+
 export default (
   <Provider store={store}>
-    <App />
+    <Router history={hashHistory}>
+      <Route path="/" component={App} />
+      <Route path="/Other" component={Other} />
+    </Router>
   </Provider>
 );
