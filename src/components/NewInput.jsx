@@ -20,14 +20,4 @@ let NewInput = ({ onClick }) => {
     </div>
 }
 
-const mapDispatchProps = (
-    dispatch
-) => {
-    return {
-        onClick: (text) => {
-            dispatch(changeText(text))
-        }
-    }
-}
-
-export default connect(null, mapDispatchProps)(NewInput);
+export default connect(null, { onClick: changeText })(NewInput);
