@@ -1,14 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 import { changeText } from '../actions';
 
-let NewInput = ({ onClick }) => {
+let NewInput = ({ title, onClick }) => {
     let input;
 
     return <div>
         <input
             type="text"
             placeholder="writeme"
+            title={title}
             ref={node => { input = node; } }
             />
         <button onClick={() => {
@@ -20,4 +22,8 @@ let NewInput = ({ onClick }) => {
     </div>
 }
 
-export default connect(null, { onClick: changeText })(NewInput);
+const mapStateToProps = (state, { params }) => ({
+       title: params.text
+})
+
+export default withRouter(connect(mapStateToProps, { onClick: changeText })(NewInput));

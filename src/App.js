@@ -50,8 +50,8 @@ export default (
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route component={MainLayout}>
-        <Route path="/" component={App} />
         <Route path="Other" component={Other} />
+        <Route path="/(:text)" component={App} />
       </Route>
     </Router>
   </Provider>
